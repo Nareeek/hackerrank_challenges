@@ -91,7 +91,7 @@ int main()
 
     for (int t_itr = 0; t_itr < t; t_itr++) {
 
-	// why is the llist2 pointer not deleted at the end of the program or loop?
+	// why is the llist pointer not deleted at the end of the program or loop?
         SinglyLinkedList* llist = new SinglyLinkedList();
 
         int llist_count;
