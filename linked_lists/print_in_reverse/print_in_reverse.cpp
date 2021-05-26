@@ -63,12 +63,17 @@ void reversePrint(SinglyLinkedListNode* head) {
     
     if(head->next == nullptr){
         cout << head->data;
+
+	delete head;
         return;
     }
     
     if(head->next->next == nullptr){
         cout << head->next->data << "\n";
         cout << head->data;
+
+	delete head->next;
+	delete head;
         return;
     }
     
@@ -90,14 +95,21 @@ void reversePrint(SinglyLinkedListNode* head) {
         new_node = new_node->next; // 4 | nulptr
     }
     
-    next_node->next = head; // 4 -> 3   
+    next_node->next = head; // 4 -> 3
+    auto temp = next_node;
+
     while(next_node){
         cout << next_node->data << "\n";
         next_node = next_node->next;
     }
-    
-    delete head;
-    delete left_node;
+
+
+    while(temp){
+	auto tmp = temp;
+	temp = temp->next;
+
+	delete tmp;
+    }
 }
 
 int main()
