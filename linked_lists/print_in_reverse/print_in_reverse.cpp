@@ -103,13 +103,7 @@ void reversePrint(SinglyLinkedListNode* head) {
         next_node = next_node->next;
     }
 
-
-    while(temp){
-	auto tmp = temp;
-	temp = temp->next;
-
-	delete tmp;
-    }
+    free_singly_linked_list(temp);
 }
 
 int main()
@@ -119,6 +113,8 @@ int main()
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
     for (int tests_itr = 0; tests_itr < tests; tests_itr++) {
+	
+	// why is the llist  pointer not deleted at the end of the loop?
         SinglyLinkedList* llist = new SinglyLinkedList();
 
         int llist_count;

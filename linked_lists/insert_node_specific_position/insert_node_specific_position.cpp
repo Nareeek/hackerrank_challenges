@@ -87,6 +87,7 @@ int main()
 {
     ofstream fout(getenv("OUTPUT_PATH"));
 
+    // why is the llist pointer not deleted at the end of the program?
     SinglyLinkedList* llist = new SinglyLinkedList();
 
     int llist_count;

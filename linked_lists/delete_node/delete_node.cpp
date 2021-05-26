@@ -86,10 +86,12 @@ SinglyLinkedListNode* deleteNode(SinglyLinkedListNode* llist, int position) {
     
 }
 
+
 int main()
 {
     ofstream fout(getenv("OUTPUT_PATH"));
 
+    // why is the llist pointer not deleted at the end of the program?
     SinglyLinkedList* llist = new SinglyLinkedList();
 
     int llist_count;
@@ -112,10 +114,12 @@ int main()
 
     print_singly_linked_list(llist1, " ", fout);
     fout << "\n";
+    
 
     free_singly_linked_list(llist1);
 
     fout.close();
+
 
     return 0;
 }

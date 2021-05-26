@@ -49,14 +49,19 @@ void free_singly_linked_list(SinglyLinkedListNode* node) {
 
 void printLinkedList(SinglyLinkedListNode* head) {
     if(head == nullptr){ return; }
+
+    auto temp = head;
     while(head){
         cout << head->data << "\n";
         head = head->next;
     }
+
+    free_singly_linked_list(temp);
 }
 
 int main()
 {
+    // why is the llist pointer not deleted at the end of the program?
     SinglyLinkedList* llist = new SinglyLinkedList();
 
     int llist_count;
