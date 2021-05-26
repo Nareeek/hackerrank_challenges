@@ -69,8 +69,6 @@ SinglyLinkedListNode* removeDuplicates(SinglyLinkedListNode* head) {
     }
     
     auto temp = head;
-    int prev = 0;
-    
     while(temp->next){
         if(temp->data == temp->next->data){
             auto tmp = temp->next;
