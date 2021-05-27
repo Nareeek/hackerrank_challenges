@@ -119,6 +119,7 @@ int main()
         cin >> index;
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
+	// why pointer llist1 doesn't delete after loop or program?
         SinglyLinkedList* llist1 = new SinglyLinkedList();
 
         int llist1_count;
@@ -133,6 +134,7 @@ int main()
             llist1->insert_node(llist1_item);
         }
       
+	// why pointer llist2 doesn't delete after loop or program?
       	SinglyLinkedList* llist2 = new SinglyLinkedList();
 
         int llist2_count;
