@@ -6,11 +6,6 @@ string ltrim(const string &);
 string rtrim(const string &);
 vector<string> split(const string &);
 
-/* The function accepts following parameters:
- *  1. INTEGER_ARRAY h1
- *  2. INTEGER_ARRAY h2
- *  3. INTEGER_ARRAY h3
- */
 
 int sum(vector<int>& height){
     int s = 0;
@@ -43,17 +38,13 @@ int equalStacks(vector<int> h1, vector<int> h2, vector<int> h3) {
     
     
     bool eq1 = false, eq2 = false, eq3 = false;
-    vector<int> temp1, temp2, temp3;
     
     int sum_extra = sum(extra);
     int sum_temp1 = 0, sum_temp2 = 0, sum_temp3 = 0;
     int item1 = 0, item2 = 0, item3 = 0;
         
-    while(!extra.empty()){
-        temp1 = h1; temp2 = h2; temp3 = h3;
-        
+    while(!extra.empty()){        
         sum_temp1 = sum1; sum_temp2 = sum2; sum_temp3 = sum3;
-        
         item1 = 0; item2 = 0; item3 = 0;
         
         while(sum_temp1 >= sum_extra){
@@ -61,7 +52,7 @@ int equalStacks(vector<int> h1, vector<int> h2, vector<int> h3) {
                 eq1 = true;
                 break;
             }else{
-                sum_temp1 -= temp1.at(item1);
+                sum_temp1 -= h1.at(item1);
                 item1++;
             }
         }
@@ -71,7 +62,7 @@ int equalStacks(vector<int> h1, vector<int> h2, vector<int> h3) {
                 eq2 = true;
                 break;
             }else{
-                sum_temp2 -= temp2.at(item2);
+                sum_temp2 -= h2.at(item2);
                 item2++;
             }
         }
@@ -81,7 +72,7 @@ int equalStacks(vector<int> h1, vector<int> h2, vector<int> h3) {
                 eq3 = true;
                 break;
             }else{
-                sum_temp3 -= temp3.at(item3);
+                sum_temp3 -= h3.at(item3);
                 item3++;
             }
         }
