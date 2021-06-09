@@ -32,27 +32,24 @@ class Solution {
                return root;
            }
         }
+
+    int max(int &a, int &b){
+        if(a > b){
+            return a;
+        }else{
+            return b;
+        }
+    }
     
     int height(Node* root) {
-        int h = 0;
-        stack<Node*> st;
-        st.push(root);
-        Node* front;
-        
-        while(!st.empty()){
-            front = st.top();
-            st.pop();
-            if(front->right){
-                st.push(front->right);
-                h++;
-            } else if(front->left){
-                st.push(front->left);
-                h++;
-            }
-            // h++;
+        if(root == nullptr){
+            return -1;
         }
         
-        return h;
+        int left_height = height(root->left);
+        int right_height = height(root->right);
+        
+        return 1 + max(left_height, right_height);
     }
 
 }; //End of Solution
